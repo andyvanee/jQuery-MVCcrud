@@ -1,12 +1,12 @@
 $(document).ready(function(){
     
-    // View
+    // view.textarea
     $('#maintext').bind('modelupdated', function(){
         var data = model.get();
         $(this).attr('value', data);
-        $('#keylist').html('');
     });
-
+    
+    // view.keylist
     $('#maintext').bind('modelupdated', function(){
         var data = model.get();
         $(this).attr('value', data);
@@ -15,21 +15,24 @@ $(document).ready(function(){
             if (elem) $('#keylist').append('<div>'+elem+'</div>');
         });    
     });
-            
-    // Controllers
+
+    // controller.save
     $('#save').bind('click', function(){
         var data = $('#maintext').attr('value');
         model.save(data);
     });
     
+    // controller.reload
     $('#reload').bind('click', function(){
         model.reload();
     });
     
+    // controller.new
     $('#new').bind('click', function(){
         model.create();
     });
     
+    // controller.delete_all
     $('#delete_all').bind('click', function(){
         model.deleteAll();
     });
