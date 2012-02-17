@@ -9,4 +9,8 @@ To run it python must be installed, then do:
 
 ./run
 
-And browse to http://0.0.0.0:8000
+And browse to http://0.0.0.0:8000 
+
+Requirements:
+python
+A browser that supports localStorage
