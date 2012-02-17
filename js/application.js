@@ -1,13 +1,19 @@
 $(document).ready(function(){
-    model.addKey();
-    refreshSourceList();
     
     // View
     $('#maintext').bind('modelupdated', function(){
         var data = model.get();
         $(this).attr('value', data);
-        $('#nav').html('');
-        refreshSourceList();
+        $('#keylist').html('');
+    });
+
+    $('#maintext').bind('modelupdated', function(){
+        var data = model.get();
+        $(this).attr('value', data);
+        $('#keylist').html('');
+        $(model.members()).each(function(id, elem){
+            if (elem) $('#keylist').append('<div>'+elem+'</div>');
+        });    
     });
             
     // Controllers
@@ -23,19 +29,22 @@ $(document).ready(function(){
     $('#new').bind('click', function(){
         model.create();
     });
+    
+    $('#delete_all').bind('click', function(){
+        model.deleteAll();
+    });
+    
+    model.load();
 });
-
-function refreshSourceList(){
-    $(model.members()).each(function(id, elem){
-        if (elem) $('#nav').append('<div>'+elem+'</div>');
-    });    
-}
-
 
 // Model
 var model = {
     key: 0,
     name: 'mytext',
+    load: function(){
+        this.addKey();
+        $('#maintext').trigger('modelupdated');
+    },
     keyname: function(){
         return this.name + ":" + this.key;
     },
@@ -93,6 +102,10 @@ var model = {
     create: function(){
         this.addKey();
         this.save('');
+        $('#maintext').trigger('modelupdated');
+    },
+    deleteAll: function(){
+        localStorage.clear();
         $('#maintext').trigger('modelupdated');
     }
 }
