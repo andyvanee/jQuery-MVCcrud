@@ -13,4 +13,5 @@ And browse to http://0.0.0.0:8000
 
 Requirements:
 python
+uwsgi ( pip install uwsgi )
 A browser that supports localStorage
