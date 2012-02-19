@@ -1,2 +1,10 @@
 #!/bin/sh
-python -m SimpleHTTPServer
+
+x=`which uwsgi`
+if [ "$x" = '' ]; then
+    echo 'uwsgi is required'
+    echo 'To install it with pip: pip install uwsgi'
+    exit 1
+fi
+
+uwsgi --ini app.ini

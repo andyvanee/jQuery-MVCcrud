@@ -5,7 +5,7 @@ A silly little MVC in jQuery based on this commentary:
 
 http://en.wikipedia.org/wiki/Model–view–controller#The_architecture_vs._the_frameworks
 
-To run it python must be installed, then do:
+To run it python and uwsgi must be installed, then do:
 
 ./run
 

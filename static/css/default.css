@@ -1,3 +1,7 @@
 body { font-family: sans-serif; background-color: #EEE; margin: 0; }
 .container { margin: 0 auto; width: 940px; padding: 0 10px;}
 .row { margin-left: -20px; padding: 20px; width: 100%; background-color: #FFF; }
+
+#content { width: 60%; }
+#content textarea { width: 100%; min-height: 140px; }
+#keylist { width: 30%; float: right; }

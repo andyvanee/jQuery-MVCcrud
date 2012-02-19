@@ -1,0 +1,15 @@
+User Interface
+
+- Push all views and controllers to client side HTML/JavaScript
+- Interacts with the server side model API via XHR
+- Views will have dynamic stubs where content is interactive (empty containers)
+
+Model
+
+- The model is the server-side API.
+- Serves JSON. Model data, validation code and callbacks
+
+Static Generator
+
+- Server side process to respond to model events and update static code as necessary
+- 
